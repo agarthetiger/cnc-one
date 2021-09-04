@@ -29,3 +29,12 @@ I use Visual Studio Code to view and edit my gcode files, and it seems more stan
 When we power on the CNC One we have to home all the axis before the machine can be moved in any direction. Even though we have to automatic tool changing ability on this machine, tool selections are still output to the g code file which then causes a 2nd unnecessary homing. My personal workflow is to home the machine, then set the Work Offset (WCS G54) using a combination of the tool length sensor and dialling in the X-Y zero position for my part based on where I selected the origin to be in Fusion 360.
 
 At the end of machining, industrial CNC machines will have their machine home position set to the top right rear corner of the working area by default. This means that homing all axis typically retracts the cutter as far away from the machine operator as possible, and allows maximum access to the part being machined. On the CNC One, home is the top front left corner of the machine, and moving this gantry mill to the front puts the X/Z axis right in the way of whatever I've just finished machining. Fully retracting the spindle on the Z axis first is safe and sensible. A subsequent move to X 0 should also be safe, assuming all workholding is below the Z retract height including the still rotating endmill, which should be a safe and sane assumption to make. As there is no default position for always placing the workpiece in the Y axis, I personally choose to leave it where it finishes. The front of the machine means I will always have to jog it backwards out of the way. Moving it to the back means that when I next home or power on my machine I'll have to traverse the full Y axis length to home to the front of the machine.
+
+### sys/config.g
+
+Changes to support dual y-axis endstops. **Untested**
+
+
+### sys/home_.g
+
+Changes to support dual y-axis endstops. **Untested**
