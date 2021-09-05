@@ -32,9 +32,13 @@ At the end of machining, industrial CNC machines will have their machine home po
 
 ### sys/config.g
 
-Changes to support dual y-axis endstops. **Untested**
+Changes to support dual y-axis endstops. **Mostly untested**
+
+Note that this requires an additional limit switch on the other Y axis which must be wired into the 4th axis (Extruder 0) endstop connectors on the breakout board, pins 25 and 26. The switch must be positioned carefully so that it switches at the same time (ie position) as the original y axis switch.
 
 
 ### sys/home_.g
 
-Changes to support dual y-axis endstops. **Untested**
+Changes to support dual y-axis endstops. **Mostly untested**
+
+homeall.g and homey.g must be used in conjunction with the updated config.g file and the additional hardware limit switch wired correctly to the breakout board.
